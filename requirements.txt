@@ -1,8 +1,7 @@
 mindspore==1.8.1
-mindspore_gpu==1.8.1
 numpy==1.21.6
 Pillow==9.2.0
 PyYAML==6.0
 scikit_image==0.19.3
-skimage==0.0
+scikit-image
 torch==1.8.1

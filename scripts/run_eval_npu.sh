@@ -1,9 +1,9 @@
 if [ $# != 6 ] && [ $# != 7 ]
 then
     echo "Please run the script as: "
-    echo "bash scripts/run_eval_gpu.sh [DEVICE_ID] [CFG_PATH] [CKPT_PATH] [IMAGES_PATH] [MASKS_PATH] [ANNO_PATH]"
+    echo "bash scripts/run_eval_npu.sh [DEVICE_ID] [CFG_PATH] [CKPT_PATH] [IMAGES_PATH] [MASKS_PATH] [ANNO_PATH]"
     echo " or "
-    echo "bash scripts/run_eval_gpu.sh [DEVICE_ID] [CFG_PATH] [CKPT_PATH] [IMAGES_PATH] [MASKS_PATH] [ANNO_PATH] [OUTPUT_PATH]"
+    echo "bash scripts/run_eval_npu.sh [DEVICE_ID] [CFG_PATH] [CKPT_PATH] [IMAGES_PATH] [MASKS_PATH] [ANNO_PATH] [OUTPUT_PATH]"
 exit 1
 fi
 
@@ -65,7 +65,7 @@ if [ $# == 7 ]
 then
   python eval.py \
     --checkpoint_path=$CKPT_PATH \
-    --device_target='GPU' \
+    --device_target='Ascend' \
     --device_num=$DEVICE_NUM \
     --device_id=$DEVICE_ID \
     --data_root=$IMAGES_PATH \

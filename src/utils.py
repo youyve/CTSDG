@@ -8,8 +8,8 @@ from mindspore import ops
 
 def check_args(cfg):
     """check args"""
-    if cfg.device_target != 'GPU':
-        raise ValueError(f'Only GPU device is supported now, got {cfg.device_target}')
+    if cfg.device_target != 'Ascend':
+        raise ValueError(f'Only Ascend device is supported now, got {cfg.device_target}')
 
     if cfg.file_format and cfg.file_format != 'MINDIR':
         raise ValueError(f'Only MINDIR format is supported for export now, got {cfg.file_format}')

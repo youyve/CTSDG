@@ -1,6 +1,6 @@
 if [ $# != 7 ]
 then
-    echo "Usage: bash scripts/run_standalone_train_gpu.sh [DEVICE_ID] [CFG_PATH] [SAVE_PATH] [VGG_PRETRAIN] [IMAGES_PATH] [MASKS_PATH] [ANNO_PATH]"
+    echo "Usage: bash scripts/run_train_npu.sh [DEVICE_ID] [CFG_PATH] [SAVE_PATH] [VGG_PRETRAIN] [IMAGES_PATH] [MASKS_PATH] [ANNO_PATH]"
 exit 1
 fi
 
@@ -33,7 +33,7 @@ cp "$CFG_PATH" "$SAVE_PATH"
 
 python train.py \
   --is_distributed=0 \
-  --device_target=GPU \
+  --device_target=Ascend \
   --gen_lr_train=0.0002 \
   --gen_lr_finetune=0.00005 \
   --train_iter=350000 \

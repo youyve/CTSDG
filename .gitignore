@@ -1,6 +1,0 @@
-# ignore the logs
-logs/
-output/
-dataset/
-*.pth
-*.zip

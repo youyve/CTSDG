@@ -35,15 +35,11 @@
 [NVIDIA Irregular Mask Dataset](https://nv-adlr.github.io/publication/partialconv-inpainting)
 
 - 需要从 **CELEBA** 下载以下内容：
-
-  - `img_align_celeba.zip`
-  - `list_eval_partitions.txt`
-
+    - `img_align_celeba.zip`
+    - `list_eval_partitions.txt`
 - 需要从 **NVIDIA Irregular Mask Dataset** 下载以下内容：
-
-  - `irregular_mask.zip`
-  - `test_mask.zip`
-
+    - `irregular_mask.zip`
+    - `test_mask.zip`
 - 目录结构如下：
 
   ```text
@@ -59,6 +55,10 @@
 ## [1.3. 代码提交地址](contents)
 
 https://git.openi.org.cn/youlz/CTSDG
+
+## [1.4. 其它](contents)
+
+日志文件保存在 **log.zip** 中
 
 # [2. 代码目录结构说明](#contents)
 
@@ -116,7 +116,7 @@ https://git.openi.org.cn/youlz/CTSDG
 
 - 硬件环境
   - CPU：aarch64  192核 
-  - NPU：910ProA 32G
+  - NPU：910ProA
 - MindSpore version:  1.6.1
 - Python
   - 版本：Python 3.7.6
@@ -199,6 +199,23 @@ Example:
 # MASKS_PATH - 用于测试的遮罩路径
 # ANNO_PATH - 拆分文件的路径
 bash scripts/run_eval_npu.sh 0 ./default_config.yaml /path/to/ckpt /path/to/img_align_celeba /path/to/testing_mask /path/to/list_eval_partitions.txt  
+```
+
+### [3.4.2. 评估精度结果](contents)
+
+评估日志文件储存在 `./logs/eval_log.txt`.
+
+结果：
+
+```text
+PSNR:
+0-20%: 37.93
+20-40%: 29.35
+40-60%: 24.23
+SSIM:
+0-20%: 0.979
+20-40%: 0.921
+40-60%: 0.828
 ```
 
 ## [4.1. 参考论文](contents)
